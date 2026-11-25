@@ -1,0 +1,19 @@
+# Environment files (safer catch-all)
+.env*
+!.env.example
+
+# Build & TypeScript cache
+*.tsbuildinfo
+
+# Logs & temp
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+tmp/
+temp/
+
+# Lint / test caches
+.eslintcache
+.nyc_output/
