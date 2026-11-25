@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: payment-billing-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-payment_billing_db}
+    ports:
+      - '5432:5432'
+    volumes:
+      - payment_billing_pgdata:/var/lib/postgresql/data
+
+  payment-billing-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: payment-billing-service
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      PORT: 3004
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/payment_billing_db?schema=public
+      TAX_RATE: 0.10
+      RESERVATION_SERVICE_URL: http://host.docker.internal:3003
+      NOTIFICATION_SERVICE_URL: http://host.docker.internal:3005
+    ports:
+      - '3004:3004'
+
+volumes:
+  payment_billing_pgdata:
