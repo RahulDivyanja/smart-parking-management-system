@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: review-feedback-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-review_feedback_db}
+    ports:
+      - '5434:5432'
+    volumes:
+      - review_feedback_pgdata:/var/lib/postgresql/data
+
+  review-feedback-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: review-feedback-service
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      PORT: 3006
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/review_feedback_db?schema=public
+      RESERVATION_SERVICE_URL: http://host.docker.internal:3003
+      FACILITY_SERVICE_URL: http://host.docker.internal:3002
+    ports:
+      - '3006:3006'
+
+volumes:
+  review_feedback_pgdata:
