@@ -13,7 +13,10 @@ export class PaymentsController {
   @Post()
   @ApiOperation({ summary: 'Initiate and process a simulated parking payment' })
   @ApiResponse({ status: 201, description: 'Payment processed' })
-  @ApiResponse({ status: 409, description: 'Duplicate payment for reservation' })
+  @ApiResponse({
+    status: 409,
+    description: 'Duplicate payment for reservation',
+  })
   create(@Body() createPaymentDto: CreatePaymentDto) {
     return this.paymentsService.create(createPaymentDto);
   }

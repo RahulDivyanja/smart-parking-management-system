@@ -12,7 +12,10 @@ import {
 } from 'class-validator';
 
 export class CreatePaymentDto {
-  @ApiProperty({ example: 'res-1001', description: 'Related parking reservation ID' })
+  @ApiProperty({
+    example: 'res-1001',
+    description: 'Related parking reservation ID',
+  })
   @IsString()
   @IsNotEmpty()
   reservationId: string;

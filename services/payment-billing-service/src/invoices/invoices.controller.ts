@@ -9,7 +9,10 @@ export class InvoicesController {
 
   @Post(':paymentId')
   @ApiOperation({ summary: 'Generate an invoice for a successful payment' })
-  @ApiResponse({ status: 201, description: 'Invoice generated (or returned if already exists)' })
+  @ApiResponse({
+    status: 201,
+    description: 'Invoice generated (or returned if already exists)',
+  })
   generateForPayment(@Param('paymentId') paymentId: string) {
     return this.invoicesService.generateForPayment(paymentId);
   }

@@ -72,7 +72,9 @@ describe('PaymentsService', () => {
 
     expect(result.status).toBe(PaymentStatus.SUCCESS);
     expect(result.invoice).toBeDefined();
-    expect(mockInvoicesService.generateForPayment).toHaveBeenCalledWith('pay-1');
+    expect(mockInvoicesService.generateForPayment).toHaveBeenCalledWith(
+      'pay-1',
+    );
   });
 
   it('creates a failed payment when simulateOutcome is FAILED', async () => {
