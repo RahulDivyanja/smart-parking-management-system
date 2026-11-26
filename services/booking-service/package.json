@@ -1,0 +1,41 @@
+{
+  "name": "parkease-booking-service",
+  "version": "1.0.0",
+  "description": "ParkEase Microservice 03 - Smart Parking Reservation and Management Booking Service",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "node --test tests/unit.test.js tests/scheduler.test.js",
+    "test:concurrency": "node --test tests/concurrency.integration.test.js",
+    "test:scheduler:live": "node --test tests/scheduler.integration.test.js",
+    "typeorm": "typeorm -d src/config/data-source.js",
+    "migration:generate": "typeorm migration:generate -d src/config/data-source.js",
+    "migration:run": "typeorm migration:run -d src/config/data-source.js",
+    "migration:revert": "typeorm migration:revert -d src/config/data-source.js"
+  },
+  "keywords": [
+    "parkease",
+    "microservice",
+    "booking",
+    "parking",
+    "typeorm",
+    "mssql",
+    "express"
+  ],
+  "author": "ParkEase Team",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.8.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mssql": "^11.0.1",
+    "reflect-metadata": "^0.2.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
