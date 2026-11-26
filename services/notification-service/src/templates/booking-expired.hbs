@@ -1,0 +1,40 @@
+<span class="badge badge-expired">Expired</span>
+
+<h2>Reservation Hold Expired</h2>
+
+<p>Hello <strong>{{customerName}}</strong>,</p>
+
+<p>Your pending parking reservation hold for <strong>{{bookingReference}}</strong> at <strong>{{facilityName}}</strong> has expired because the reservation was not completed within the hold window.</p>
+
+<table class="details-table">
+  <tr>
+    <td class="label">Booking Reference</td>
+    <td class="value">{{bookingReference}}</td>
+  </tr>
+  <tr>
+    <td class="label">Parking Facility</td>
+    <td class="value">{{facilityName}}</td>
+  </tr>
+  <tr>
+    <td class="label">Requested Date</td>
+    <td class="value">{{bookingDate}}</td>
+  </tr>
+  <tr>
+    <td class="label">Scheduled Start</td>
+    <td class="value">{{startTime}}</td>
+  </tr>
+  <tr>
+    <td class="label">Scheduled End</td>
+    <td class="value">{{endTime}}</td>
+  </tr>
+  {{#if message}}
+  <tr>
+    <td class="label">Details</td>
+    <td class="value">{{message}}</td>
+  </tr>
+  {{/if}}
+</table>
+
+<div class="alert-box alert-info">
+  <strong>Reservation Hold Expired:</strong> This pending reservation hold is no longer active. If you still need parking, you can easily create a new reservation through the ParkEase mobile app or web portal.
+</div>

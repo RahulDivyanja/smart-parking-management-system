@@ -1,0 +1,49 @@
+{
+  "name": "parkease-notification-service",
+  "version": "1.0.0",
+  "description": "ParkEase Microservice 05 - Smart Parking Reservation and Management Notification Service",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "node --test tests/unit/**/*.test.js",
+    "test:live": "node --test tests/integration/**/*.test.js",
+    "email:test": "node scripts/send-test-email.js",
+    "consumer:start": "node scripts/start-consumer.js",
+    "sweeper:start": "node scripts/start-sweeper.js",
+    "event:publish": "node scripts/publish-test-event.js",
+    "typeorm": "typeorm -d src/config/data-source.js",
+    "migration:generate": "typeorm migration:generate -d src/config/data-source.js",
+    "migration:run": "typeorm migration:run -d src/config/data-source.js",
+    "migration:revert": "typeorm migration:revert -d src/config/data-source.js"
+  },
+  "keywords": [
+    "parkease",
+    "microservice",
+    "notification",
+    "email",
+    "rabbitmq",
+    "typeorm",
+    "mssql",
+    "express"
+  ],
+  "author": "ParkEase Team",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.10.4",
+    "axios": "^1.8.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "handlebars": "^4.7.8",
+    "mssql": "^11.0.1",
+    "nodemailer": "^6.9.16",
+    "reflect-metadata": "^0.2.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "typeorm": "^0.3.20",
+    "uuid": "^11.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

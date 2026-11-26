@@ -1,0 +1,42 @@
+<span class="badge badge-confirmed">Confirmed</span>
+
+<h2>Reservation Confirmed!</h2>
+
+<p>Hello <strong>{{customerName}}</strong>,</p>
+
+<p>Great news! Your parking reservation has been successfully confirmed. Your parking space is secured and ready for your arrival.</p>
+
+<table class="details-table">
+  <tr>
+    <td class="label">Booking Reference</td>
+    <td class="value">{{bookingReference}}</td>
+  </tr>
+  <tr>
+    <td class="label">Parking Facility</td>
+    <td class="value">{{facilityName}}</td>
+  </tr>
+  <tr>
+    <td class="label">Booking Date</td>
+    <td class="value">{{bookingDate}}</td>
+  </tr>
+  <tr>
+    <td class="label">Reserved Start Time</td>
+    <td class="value">{{startTime}}</td>
+  </tr>
+  <tr>
+    <td class="label">Reserved End Time</td>
+    <td class="value">{{endTime}}</td>
+  </tr>
+  {{#if message}}
+  <tr>
+    <td class="label">Arrival Instructions</td>
+    <td class="value">{{message}}</td>
+  </tr>
+  {{/if}}
+</table>
+
+<div class="alert-box alert-info">
+  <strong>Arrival Tips:</strong> Please have your booking reference (<strong>{{bookingReference}}</strong>) ready upon entering the parking facility. Automated license plate scanners or barcode kiosks will grant you entry during your reserved window.
+</div>
+
+<p>We look forward to serving you!</p>

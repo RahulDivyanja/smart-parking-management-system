@@ -1,0 +1,38 @@
+<span class="badge badge-cancelled">Cancelled</span>
+
+<h2>Reservation Cancelled</h2>
+
+<p>Hello <strong>{{customerName}}</strong>,</p>
+
+<p>Your parking reservation <strong>{{bookingReference}}</strong> has been cancelled as requested.</p>
+
+<table class="details-table">
+  <tr>
+    <td class="label">Booking Reference</td>
+    <td class="value">{{bookingReference}}</td>
+  </tr>
+  <tr>
+    <td class="label">Parking Facility</td>
+    <td class="value">{{facilityName}}</td>
+  </tr>
+  <tr>
+    <td class="label">Booking Date</td>
+    <td class="value">{{bookingDate}}</td>
+  </tr>
+  <tr>
+    <td class="label">Start Time</td>
+    <td class="value">{{startTime}}</td>
+  </tr>
+  <tr>
+    <td class="label">End Time</td>
+    <td class="value">{{endTime}}</td>
+  </tr>
+  {{#if message}}
+  <tr>
+    <td class="label">Cancellation Reason</td>
+    <td class="value">{{message}}</td>
+  </tr>
+  {{/if}}
+</table>
+
+<p>If you did not initiate this cancellation or if you believe this was in error, please reach out to our support team immediately.</p>

@@ -1,0 +1,13 @@
+const REMINDER_STATUS = Object.freeze({
+  INACTIVE: 'INACTIVE',
+  PENDING: 'PENDING',
+  PROCESSING: 'PROCESSING',
+  SENT: 'SENT',
+  CANCELLED: 'CANCELLED',
+  SKIPPED: 'SKIPPED',
+  FAILED: 'FAILED'
+});
+
+module.exports = {
+  REMINDER_STATUS
+};

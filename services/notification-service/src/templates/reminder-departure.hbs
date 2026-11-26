@@ -1,0 +1,32 @@
+<span class="badge badge-warning">Session Ending Soon</span>
+
+<h2>Departure Reminder: Your Parking Session Ends Soon</h2>
+
+<p>Hello <strong>{{customerName}}</strong>,</p>
+
+<p>This is a reminder that your parking reservation will end in approximately <strong>15 minutes</strong>.</p>
+
+<table class="details-table">
+  <tr>
+    <td class="label">Booking Reference</td>
+    <td class="value">{{bookingReference}}</td>
+  </tr>
+  <tr>
+    <td class="label">Parking Facility</td>
+    <td class="value">{{facilityName}}</td>
+  </tr>
+  <tr>
+    <td class="label">Reservation Date</td>
+    <td class="value">{{bookingDate}}</td>
+  </tr>
+  <tr>
+    <td class="label">Arrival Time</td>
+    <td class="value">{{startTime}}</td>
+  </tr>
+  <tr>
+    <td class="label">Scheduled Departure</td>
+    <td class="value">{{endTime}}</td>
+  </tr>
+</table>
+
+<p>Please prepare to exit the facility on or before your scheduled departure time to avoid any overtime parking fees.</p>

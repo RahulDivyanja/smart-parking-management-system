@@ -1,0 +1,10 @@
+const PROCESSING_STATUS = Object.freeze({
+  RECEIVED: 'RECEIVED',
+  PERSISTED: 'PERSISTED',
+  COMPLETED: 'COMPLETED',
+  FAILED: 'FAILED'
+});
+
+module.exports = {
+  PROCESSING_STATUS
+};
